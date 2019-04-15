@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdlib.h>
-
+using std::string;
 
 namespace bullpgia {
 
@@ -15,14 +15,4 @@ public:
 };
 
 
-
 }
-
-
-
-
-
-
-
-
-};

@@ -1,8 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdlib.h>
-#include <cstdint>
-
+using std::string;
 
 namespace bullpgia {
 
@@ -12,9 +11,9 @@ class Guesser{
 public:
 
     int length;
-	virtual string guess(uint length) = 0;
 
-    
+	virtual string guess() = 0;
+
 };
 
 
