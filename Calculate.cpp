@@ -1,17 +1,9 @@
-#include <Calculate.hpp>
-using std::string;
-#include <iostream>
-#include <stdlib.h>
+#include "calculate.hpp"
 
+using std::string,std::to_string;
 
-
-
-string bullpgia::calculateBullAndPgia (string choice , string guess){
-
-
-return " ";
+string bullpgia::calculateBullAndPgia(string str, string guess)
+{
+    
+    return " ";
 }
-
-
-
-

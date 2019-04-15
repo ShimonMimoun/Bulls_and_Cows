@@ -1,14 +1,18 @@
+
+
+
+
+#include "calculate.hpp"
 #include "SmartGuesser.hpp"
-#include <stdlib.h>
-#include <iostream>
+
+#include <string>
+
 using std::string;
 
 
-string SmartGuesser::guess() {
-
-return "";
-};
-
-
-
+string bullpgia::SmartGuesser::guess()
+{
+    //TODO
+    return " "; 
+}
 

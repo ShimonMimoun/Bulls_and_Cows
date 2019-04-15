@@ -1,13 +1,7 @@
-#include <Guesser.hpp>
-#include <iostream>
-#include <stdlib.h>
-using std::string;
-using namespace bullpgia;
+#include "Guesser.hpp"
 
 
-    void Guesser::startNewGame(uint length) {
-        this->length = length;
-    };
-    void learn(uint length) {
-
-    };
+void bullpgia::Guesser::learn(string results)
+{
+ // DOTO implement  
+}
