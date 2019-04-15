@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdlib.h>
-#include <cstdint>
+
 
 
 namespace bullpgia {
@@ -10,7 +10,7 @@ namespace bullpgia {
 class Chooser{
 
 public:
-	virtual string choose(int length) = 0;
+	virtual string choose(uint length) = 0;
 
     
 };
