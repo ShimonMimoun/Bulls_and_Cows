@@ -12,7 +12,7 @@ class Guesser{
 public:
 
     int length;
-	virtual string guess(int length) = 0;
+	virtual string guess(uint length) = 0;
 
     
 };
