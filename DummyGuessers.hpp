@@ -20,4 +20,5 @@ class ConstantGuesser: public bullpgia::Guesser {
  */
 class RandomGuesser: public bullpgia::Guesser {
 	string guess() override;
+
 };
