@@ -1,3 +1,4 @@
+
 /**
  * A demo program for bull-pgia.
  * 
@@ -40,14 +41,73 @@ int main() {
 		.CHECK_EQUAL(play(c1234, g12345, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
 		.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
 		;
+		
+		// testcase.setname("Play with smart guesser");
+		// RandomChooser randy;
+		// SmartGuesser smarty;
+		// for (uint i=0; i<100; ++i) {
+		// 	testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
+		// }
+		
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////// MY TEST //////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		testcase.setname("Play with smart guesser");
-		RandomChooser randy;
-		SmartGuesser smarty;
-		for (uint i=0; i<100; ++i) {
-			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
-		}
 
+	
+		testcase.setname("Test CalculateBull_and_pgia Succes")
+				.CHECK_OUTPUT(calculateBullAndPgia("123456789","123456789"),"9,0")	//9 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1231","1113"), "1,2")      //1 bull,2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1112","2111"), "2,2")      //2 bull,2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("6900","9060"), "1,3")      //1 bull,3 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("1010","1010"),"4,0") 		//4 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("222","222"),"3,0")					//3 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("17","17"),"2,0")						//2 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("11111","11111"),"5,0")			//5 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("3319","1111"), "1,0")      //1 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("2020","2200"), "2,2")      //2 bull,2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("6661","1116"), "0,2")      //0 bull,2 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("33333","33333"),"5,0")			//5 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("9920","2922"), "2,0")      //2 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("3","3"),"1,0")								//1 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1011","1010"),"3,0")				//3 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("123","301"),"0,2")						//0 bull,2 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("71","17"),"0,2")							//0 bull,2 pgia		
+	.CHECK_OUTPUT(calculateBullAndPgia("2341324","9876348"),"1,1")			//1 bull,1 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("5","3"),"0,0")							//0 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"),"0,4")				//0 bull,4 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("123456789","195864732"),"2,7")	//2 bull,7 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("123456","123456"),"6,0")			//6 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1231","1113"), "1,2")      //1 bull,2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("8060","4448"), "0,1")      //0 bull,1 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("9999","2292"), "1,0")      //1 bull,0 pgia
+		;
+
+testcase.setname("Test CalculateBull_and_pgia With error lenght ")
+
+.CHECK_OUTPUT(calculateBullAndPgia("123456789","12345678"),"0,0")	//0 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1231","111"), "0,0")      //0 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1112","21111"), "0,0")      //0 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("620","9060"), "0,0")      //0 bull,0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("105","1010"),"0,0") 		//0 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("2242","222"),"0,0")					//0 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("137","17"),"0,0")						//0 bull,0 pgia
+;
+
+
+
+		testcase.setname("Test Play Constant")		
+	///////////////////////////////////////////
+		;
+
+		testcase.setname("Test Play With Random ");
+		RandomChooser rchooser;
+		SmartGuesser schooser;
+		testcase.CHECK_EQUAL(play(rchooser, schooser, 5, 100)<=1, false);   
+		testcase.CHECK_EQUAL(play(rchooser, schooser, 5, 100)<=100, true);     		  		 
+		testcase.CHECK_EQUAL(play(rchooser, schooser, 3, 100)<=8, true);    
+
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
     grade = testcase.grade();
 	} else {
 		testcase.print_signal(signal);
@@ -55,5 +115,4 @@ int main() {
 	}
 	cout << "Your grade is: "  << grade << endl;
 	return 0;
-}
-
+}	
