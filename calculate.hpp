@@ -6,7 +6,7 @@ using std::string;
 namespace bullpgia {
 
 
-    string calculateBullAndPgia(string str, string guess);
+    string calculateBullAndPgia(string choice, string guess);
 
 
 };

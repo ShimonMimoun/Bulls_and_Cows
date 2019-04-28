@@ -85,13 +85,13 @@ int main() {
 
 testcase.setname("Test CalculateBull_and_pgia With error lenght ")
 
-.CHECK_OUTPUT(calculateBullAndPgia("123456789","12345678"),"0,0")	//0 bull,0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("1231","111"), "0,0")      //0 bull,0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("1112","21111"), "0,0")      //0 bull,0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("620","9060"), "0,0")      //0 bull,0 pgia
-			.CHECK_OUTPUT(calculateBullAndPgia("105","1010"),"0,0") 		//0 bull,0 pgia
-	.CHECK_OUTPUT(calculateBullAndPgia("2242","222"),"0,0")					//0 bull,0 pgia
-	.CHECK_OUTPUT(calculateBullAndPgia("137","17"),"0,0")						//0 bull,0 pgia
+.CHECK_OUTPUT(calculateBullAndPgia("123456789","12345678"),"8,0")	//8 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1231","111"), "1,1")      //1 bull,1 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("1112","21111"), "2,2")      //2 bull,2 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("620","9060"), "0,2")      //0 bull,2 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("105","1010"),"2,0") 		//2 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("2242","222"),"2,1")					//2 bull,1 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("137","17"),"1,1")						//1 bull,1 pgia
 ;
 
 
