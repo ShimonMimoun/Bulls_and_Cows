@@ -92,6 +92,16 @@ testcase.setname("Test CalculateBull_and_pgia With error lenght ")
 			.CHECK_OUTPUT(calculateBullAndPgia("105","1010"),"2,0") 		//2 bull,0 pgia
 	.CHECK_OUTPUT(calculateBullAndPgia("2242","222"),"2,1")					//2 bull,1 pgia
 	.CHECK_OUTPUT(calculateBullAndPgia("137","17"),"1,1")						//1 bull,1 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("66","1116"), "0,2")      //0 bull,2 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("3333","33333"),"5,0")			//5 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("920","22"), "2,0")      //2 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("38","3"),"1,0")								//1 bull,0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("111","1010"),"3,0")				//3 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("123","31"),"0,2")						//0 bull,2 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("71","1"),"0,2")							//0 bull,2 pgia		
+	.CHECK_OUTPUT(calculateBullAndPgia("2341324","98763"),"1,1")			//1 bull,1 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("58","3"),"0,0")							//0 bull,0 pgia
+	.CHECK_OUTPUT(calculateBullAndPgia("1234","421"),"0,4")				//0 bull,4 pgia
 ;
 
 
