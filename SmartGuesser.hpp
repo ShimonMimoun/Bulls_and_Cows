@@ -13,14 +13,15 @@
 class SmartGuesser: public bullpgia::Guesser{
       string str;
       int myplace;
-      int value[9] = {0};
-
+      int value[10] = {0};
+      bool pre;
+      bool gassing;
 public:
-          SmartGuesser(){
-            this->str = "0000";
-            myplace = 0;
-          }
+          SmartGuesser();
           string guess() override;
+          void startNewGame(uint length) override;
+          void learn(string results) override;
+          void helping();
 
 };
- }
+}
