@@ -42,12 +42,12 @@ int main() {
 		.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
 		;
 		
-		testcase.setname("Play with smart guesser");
-		RandomChooser randy;
-		SmartGuesser smarty;
-		for (uint i=0; i<100; ++i) {
-			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
-		}
+		// testcase.setname("Play with smart guesser");
+		// RandomChooser randy;
+		// SmartGuesser smarty;
+		// for (uint i=0; i<100; ++i) {
+		// 	testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
+		// }
 		
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////// MY TEST //////////////////////////////////////////////////////////////////////////////
@@ -105,9 +105,19 @@ testcase.setname("Test CalculateBull_and_pgia With error lenght ")
 ;
 
 
+		ConstantChooser c4236{"4236"}, c3123{"3123"}, c993{"9993"};
+		ConstantGuesser g12343{"12343"}, g3123{"3123"}, g9965{"9965"};
 
 		testcase.setname("Test Play Constant")		
-	///////////////////////////////////////////
+			.CHECK_EQUAL(play(c3123, g3123, 4, 100), 1)      // guesser wins in one turn.
+		.CHECK_EQUAL(play(c4236, g9965, 4, 100), 101)    // guesser loses by running out of turns 
+		.CHECK_EQUAL(play(c3123, g1234, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
+		.CHECK_EQUAL(play(c993, g12343, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
+			.CHECK_EQUAL(play(c3123, g9965, 4, 100), 1)      // guesser wins in one turn.
+		.CHECK_EQUAL(play(c4236, g12343, 4, 100), 101)    // guesser loses by running out of turns 
+		.CHECK_EQUAL(play(c993, g3123, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
+		.CHECK_EQUAL(play(c4236, g3123, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
+		
 		;
 
 		testcase.setname("Test Play With Random ");
@@ -115,7 +125,19 @@ testcase.setname("Test CalculateBull_and_pgia With error lenght ")
 		SmartGuesser schooser;
 		testcase.CHECK_EQUAL(play(rchooser, schooser, 5, 100)<=1, false);   
 		testcase.CHECK_EQUAL(play(rchooser, schooser, 5, 100)<=100, true);     		  		 
-		testcase.CHECK_EQUAL(play(rchooser, schooser, 3, 100)<=8, true);    
+		testcase.CHECK_EQUAL(play(rchooser, schooser, 3, 100)<=8, true); 
+		  
+testcase.setname("Play Test");
+
+		for (uint i=0; i<10; ++i) {
+			testcase.CHECK_EQUAL(play(rchooser, schooser, 3, 100)<=10, true);  // schooser  win at most 10 rounds
+		}
+		for (uint i=0; i<10; ++i) {
+			testcase.CHECK_EQUAL(play(rchooser, schooser, 2, 100)<=10, true);  // schooser  win  at most 10 turns
+		}
+		for (uint i=0; i<10; ++i) {
+			testcase.CHECK_EQUAL(play(rchooser, schooser, 1, 100)<=10, true);  // schooser win  at most 10 turns
+		}
 
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
     grade = testcase.grade();
