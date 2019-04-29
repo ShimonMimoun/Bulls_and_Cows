@@ -1,51 +1,59 @@
 #include "calculate.hpp"
 
-using std::string, std::to_string,std;
+using std::string, std::to_string ,std::fill ;
 
-#define MAX_SIZE 10
-#define ZERO '0'
 using namespace bullpgia;
 
 
 string bullpgia::calculateBullAndPgia(string choice, string guess) {
 
-    string results;
-     int count_bull = 0; 
-     int count_pgia = 0; 
-
    int length_choice = choice.length();
-   int *arr_temp = new  int[length_choice];
-    fill(arr_temp,arr_temp+length_choice,0);
+   char *arr_temp = new  char[length_choice];
+   for (int q=0;q<length_choice;q++)
+   {
+       arr_temp[q]=0;
+   }
 
-    for (size_t k = 0; k < length_choice; ++k)
+    int count_bull = 0; 
+    int count_pgia = 0; 
+
+   
+   
+    for (int k = 0; k < length_choice; k++)
     {
-        if (choice[k] == guess[k])
+        if (guess[k] == choice[k])   
         {
-            arr_temp[k] = 8;
-         
+             arr_temp[k] = 'b';   continue ;
         }
+        
     }
     
 
-    for (size_t d = 0; d < MAX_SIZE; ++d) 
+    for (int a = 0; a < 10; a++) 
     {
-        for (size_t i = 0; i < length_choice ; ++i) {
-            if (arr_temp[i] !=8 && guess[i] == ZERO + d) {
-                for (size_t j = 0; j < length_choice; ++j)
+        for (int i = 0; i < length_choice ; i++) 
+        {
+            if ((guess[i] == 48 + a) && (arr_temp[i] !='b' )) 
+            {
+                for (int j = 0; j < length_choice; j++)
                 {
-                    if (i != j && choice[j] == guess[i])
+                    if ( (choice[j] == guess[i]) && (i != j))
                     {
-                        if (arr_temp[j] == 0){ arr_temp[j] = 5; break;}
-                    }
-                }
-            }
-        }
-    }
+                        if (arr_temp[j] == 0)
+                        {   
+                            arr_temp[j] = 'p'; 
+                            break;
+     }}}}}}
+
+
+////////////////////////////////////////////////////////////////////////////
+    /////////////////////////// COUNT PGIA AND BULL /////////////////////
+///////////////////////////////////////////////////////////////////////////
 
     for (size_t i = 0; i < length_choice; ++i)
     {
-        count_pgia += (arr_temp[i] == 5);
-        count_bull += (arr_temp[i] == 8);  
+        count_pgia = count_pgia+ (arr_temp[i] == 'p');
+        count_bull = count_bull+ (arr_temp[i] == 'b');  
     }
      delete[] arr_temp;
 
