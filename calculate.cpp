@@ -17,17 +17,16 @@ string bullpgia::calculateBullAndPgia(string choice, string guess) {
     int count_bull = 0; 
     int count_pgia = 0; 
 
-   
-   
     for (int k = 0; k < length_choice; k++)
     {
         if (guess[k] == choice[k])   
         {
              arr_temp[k] = 'b';   continue ;
+
         }
         
-    }
     
+    }
 
     for (int a = 0; a < 10; a++) 
     {

@@ -108,15 +108,15 @@ testcase.setname("Test CalculateBull_and_pgia With error lenght ")
 		ConstantChooser c4236{"4236"}, c3123{"3123"}, c993{"9993"};
 		ConstantGuesser g12343{"12343"}, g3123{"3123"}, g9965{"9965"};
 
-		testcase.setname("Test Play Constant")		
-			.CHECK_EQUAL(play(c3123, g3123, 4, 100), 1)      // guesser wins in one turn.
-		.CHECK_EQUAL(play(c4236, g9965, 4, 100), 101)    // guesser loses by running out of turns 
-		.CHECK_EQUAL(play(c3123, g1234, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
-		.CHECK_EQUAL(play(c993, g12343, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
-			.CHECK_EQUAL(play(c3123, g9965, 4, 100), 1)      // guesser wins in one turn.
-		.CHECK_EQUAL(play(c4236, g12343, 4, 100), 101)    // guesser loses by running out of turns 
-		.CHECK_EQUAL(play(c993, g3123, 4, 100), 101)   // guesser loses technically by making an illegal guess (too long).
-		.CHECK_EQUAL(play(c4236, g3123, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
+		testcase.setname("Test Play Constant");		
+			testcase.CHECK_EQUAL(play(c3123, g3123, 4, 100), 1);      // guesser wins in one turn.
+		testcase.CHECK_EQUAL(play(c4236, g9965, 4, 100), 101);    // guesser loses by running out of turns 
+		testcase.CHECK_EQUAL(play(c3123, g1234, 4, 100), 101);   // guesser loses technically by making an illegal guess (too long).
+		testcase.CHECK_EQUAL(play(c993, g12343, 4, 100), 0) ;    // chooser loses technically by choosing an illegal number (too long).
+		testcase.CHECK_EQUAL(play(c3123, g9965, 4, 100), 1) ;     // guesser wins in one turn.
+		testcase.CHECK_EQUAL(play(c4236, g12343, 4, 100), 101);    // guesser loses by running out of turns 
+		testcase.CHECK_EQUAL(play(c993, g3123, 4, 100), 101);   // guesser loses technically by making an illegal guess (too long).
+		testcase.CHECK_EQUAL(play(c4236, g3123, 4, 100), 0);     // chooser loses technically by choosing an illegal number (too long).
 		
 		;
 
