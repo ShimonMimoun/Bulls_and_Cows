@@ -7,5 +7,6 @@ std::string RandomChooser::choose(uint length) {
 		char c = '0' + (rand()%10);
 		r += c;
 	}
+	//std::cout << "the chose is: " << r << std::endl;
 	return r;
 }

@@ -55,7 +55,6 @@ string bullpgia::calculateBullAndPgia(string choice, string guess) {
         count_bull = count_bull+ (arr_temp[i] == 'b');  
     }
      delete[] arr_temp;
-
-   
+    // std::cout << to_string(count_bull) + "," + to_string(count_pgia) << std::endl;
     return to_string(count_bull) + "," + to_string(count_pgia);
 }

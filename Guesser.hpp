@@ -15,15 +15,10 @@ public:
   int countBull;
   int countPgia;
 
+
 	virtual string guess() = 0;
-        virtual void startNewGame(uint length) {
-            this->length=length;
-        };
-        virtual void learn(string results) {
-
-      
-
-        };
+        virtual void startNewGame(uint length) {};
+        virtual void learn(string results) {};
 };
 
 
