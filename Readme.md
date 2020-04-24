@@ -7,8 +7,8 @@ It is a game that may date back a century or more which uses numbers or words. I
 
 # Lecture
 
-https://en.wikipedia.org/wiki/Bulls_and_Cows
-https://www.codingame.com/training/expert/bulls-and-cows
+- https://en.wikipedia.org/wiki/Bulls_and_Cows
+- https://www.codingame.com/training/expert/bulls-and-cows
 
 
 # Build with
